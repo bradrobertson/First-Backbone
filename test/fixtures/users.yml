@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  birth: 2011-03-31 10:09:19
+  sex: MyString
+
+two:
+  name: MyString
+  birth: 2011-03-31 10:09:19
+  sex: MyString
