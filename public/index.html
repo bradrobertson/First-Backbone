@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Backbone fun</title>
+    <link rel="stylesheet" href="/stylesheets/application.css" type="text/css" />
     <script type="text/javascript" src="/javascripts/script.min.js"></script>
     <script type="text/javascript" charset="utf-8">
       var now = new Date().getTime();
@@ -14,7 +15,10 @@
       
       $script.ready('mvc', function(){
         $script(['/javascripts/models/user.js?v='+now, 
-          '/javascripts/controllers/users_controller.js?v='+now
+          '/javascripts/controllers/users_controller.js?v='+now,
+          '/javascripts/views/users/new.js?v='+now,
+          '/javascripts/views/users/show.js?v='+now,
+          '/javascripts/views/app_view.js?v='+now
           ], function(){
           $script.domReady(App.init);
         });
@@ -23,32 +27,57 @@
   </head>
   
   <body>
-    <div id="page"></div>
+    <div id="page">
+      <fieldset id="new-user">
+        <legend>Add User</legend>
+    
+        <form id="new-user-form">
+          <p>
+            <span class="label">Name:</span>
+            <input type="text" size="20" placeholder="User Name" id="user-name" />
+          </p>
+    
+          <p>
+            <span class="label">Sex:</span>
+            <select id="user-sex">
+              <option value="m">Male</option>
+              <option value="f">Female</option>
+            </select>
+          </p>
+    
+          <p>
+            <span class="label">Birthdate:</span>
+            <input type="text" size="20" placeholder="mm/dd/yy" id="user-birth" />
+          </p>
+          <span id="user-submit">Save</span>
+        </form>
+      </fieldset>
+      
+      <h1>List of Users</h1>
+      <ul id="users"></ul>
+
+    </div>
     
     <!-- Templates -->
     
     <script type="text/template" id="user-template">
       <div class="user">
         <div class="display">
-          <div class="user-content"></div>
-          <span class="user-destroy"></span>
+          <span class="user-name"><%= name %></span>
+          <span class="user-destroy">delete</span>
         </div>
       </div>
     </script>
     
 
-        <script type="text/template" id="item-template">
-          <div class="todo <%= done ? 'done' : '' %>">
-            <div class="display">
-              <input class="check" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
-              <div class="todo-content"></div>
-              <span class="todo-destroy"></span>
-            </div>
-            <div class="edit">
-              <input class="todo-input" type="text" value="" />
-            </div>
-          </div>
-        </script>
-    
+    <script type="text/template" id="new-user-template">
+      <div class="display">
+        <input class="check" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+        <div class="todo-content"></div>
+        <span class="todo-destroy"></span>
+      </div>
+      <div class="edit"><input class="todo-input" type="text" value="" /></div>
+    </script>
+
   </body>
 </html>

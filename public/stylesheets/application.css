@@ -1,0 +1,65 @@
+body, html{
+	margin:0;padding:0;
+	background:#ccc;
+	font: normal normal normal 1em arial, sans-serif;
+}
+
+p{
+	margin:5px 0;
+}
+
+fieldset{
+	padding:10px;
+	overflow:auto;
+	border:1px solid #333;
+	border-radius:5px;
+	}
+	legend{
+		margin:15px;
+		padding:10px;
+	}
+
+input{
+	padding:4px;
+	font-size:1.2em;
+	color:#333;
+}
+
+#page{
+	width:800px;
+	margin:20px auto;
+	background:#fff;
+	padding:20px;
+	overflow:auto;
+	border-radius:20px;
+}
+
+#new-user{
+	float:right;
+	}
+	#user-submit{
+		float:right;
+		padding:10px;
+		background:#666;
+		font:normal normal bold 14px arial,sans-serif;
+		color:#eee;
+		border-radius:5px;
+		cursor:pointer;
+	}
+
+.label{
+	color:#333;
+	font-weight:bold;
+	display:inline-block;
+	width:100px;
+}
+
+.user-content{
+	display:inline-block;
+	width:200px;
+}
+.user-destroy{
+	color:#666;
+	text-decoration:underline;
+	cursor:pointer;
+}
