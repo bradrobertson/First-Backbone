@@ -11,7 +11,7 @@ App.Views.Users.Show = Backbone.View.extend({
 	
 	/**
 	*
-	*		Description
+	*		Events on user display view
 	*/
 	events: {
 		'click .user-destroy': 'clear'
@@ -22,7 +22,6 @@ App.Views.Users.Show = Backbone.View.extend({
 	*		Delete the user from backend and view
 	*/
 	clear: function(){
-		console.log("user-destroy clicked!");
 		this.model.clear();
 	},
 	
@@ -32,7 +31,7 @@ App.Views.Users.Show = Backbone.View.extend({
 	*
 	*/
 	render: function(){
-		$(this.el).html( this.template(this.model.toJSON()) );
+		$(this.el).html( this.template( this.model.toJSON() ) );
 		return this;
 	},
 	

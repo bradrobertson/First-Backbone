@@ -5,15 +5,15 @@
 *		User model
 */
 App.Models.User = Backbone.Model.extend({
-	initialize: function(){
-		console.log("new user: ", this.get('name'));
-	},
+	// see Backbone.RailsJSON, specify a name to be wrapped so that rails gets param[:user]
+	name: 'user',
+	/**
+	*
+	*		Remove user from db and view
+	*/
 	clear: function(){
 		this.destroy();
 		this.view.remove();
-	},
-	hello: function(){
-		return ["Hi", this.get('name'), "!!"].join(' ');
 	}
 });
 
